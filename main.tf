@@ -5,6 +5,17 @@ resource "azurerm_resource_group" "rg-blob" {
 
 # Here we will be using depends_on to create the resources in order as we have to create storage account first then container and then blob. if we do not use depends_on then terraform will try to create all the resources at the same time and it will give error because storage account is not created yet.
 # depends_on is a meta-argument that can be used to specify that the creation of a resource depends on the creation of another resource. This is useful when you have resources that need to be created in a specific order.
+
+resource "azurerm_storage_account" "storage" {
+  depends_on = [ azurerm_resource_group.rg-blob ]
+  name                     = "blobmainstorage"
+  resource_group_name      = azurerm_resource_group.rg-blob.name
+  location                 = azurerm_resource_group.rg-blob.location
+  account_tier             = "Standard"
+  account_replication_type = "LRS"
+  
+}
+
 resource "azurerm_storage_container" "container" {
   depends_on = [ azurerm_storage_account.storage ]
   name                  = "blobmaincontainer"
