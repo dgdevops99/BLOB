@@ -3,7 +3,7 @@
 This Terraform configuration provisions Azure resources in the following order:
 
 1. **Resource Group**
-2. **Storage Account** (defined elsewhere in the configuration)
+2. **Storage Account** 
 3. **Storage Container**
 4. **Storage Blob**
 
@@ -12,6 +12,9 @@ This Terraform configuration provisions Azure resources in the following order:
 * **Resource Group**
 
   * Creates a resource group named `blob_main_rg` in the `Central India` region.
+
+* **Storage account**
+ * Creates a storage account  named `blobmainstorage` in the `Central India` region.
 
 * **Storage Container**
 
