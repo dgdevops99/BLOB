@@ -51,4 +51,5 @@ If the file is located elsewhere, a relative or absolute path must be provided.
 Terraform uploads the specified file to the storage container and creates the blob accordingly.
 
 * **Notes**
-I have skipped the provider in the configuration file, the provider can be used in seperate files as **provider.tf**  and the required details can be added there. 
+1. I have skipped the provider in the configuration file, the provider can be used in seperate files as **provider.tf**  and the required details can be added there. 
+2. The relative/absolute paths I have used above is of my laptop where the files are present, you can use yours instead.
